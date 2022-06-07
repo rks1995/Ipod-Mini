@@ -11,3 +11,61 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* ========================== wheel component ======================== */
+
+.wheel-container {
+  width: 40%;
+  margin: 40px auto 0;
+  padding: 30px 0;
+  text-align: center;
+  background-color: #333;
+}
+
+.controls {
+  width: 130px;
+  height: 130px;
+  margin: auto;
+  padding: 30px;
+  position: relative;
+  border-radius: 50%;
+  background-color: #FCFCFF;
+}
+
+.controls div {
+  position: absolute;
+  
+}
+
+.menu, .back, .start, .forward, .play-pause{
+  inset: 0;
+  top: 89px;
+  color: #a3a39a;
+}
+
+.menu {
+  top: 30px;
+  font-size: 0.95rem;
+  user-select: none;
+}
+
+.back {
+  left: -130px;
+}
+
+.start {
+  top: 0;
+  width: 60px;
+  height: 60px;
+  margin: auto;
+  border-radius: 50%;
+  background-color: #555;
+}
+
+.forward {
+  right: -130px;
+}
+
+.play-pause {
+  top: 150px;
+}
