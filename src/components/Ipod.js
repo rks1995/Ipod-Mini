@@ -7,7 +7,8 @@ class Ipod extends React.Component {
   constructor() {
     super();
     this.state = {
-      activeItem: 'ControlFlow',
+      activeItem: 'CoverFlow',
+      page: 'Home',
     };
   }
 
@@ -21,42 +22,54 @@ class Ipod extends React.Component {
     region.bind(wheelContainer, 'rotate', function (e) {
       var distance = e.detail.distanceFromLast;
       angle += Math.floor(distance);
-      console.log(angle);
       if (angle > 15) {
-        console.log('clockwise');
         angle = 0;
-        if (self.state.activeItem === 'ControlFlow') {
+        if (self.state.activeItem === 'CoverFlow') {
           self.setState({ activeItem: 'Music' });
         } else if (self.state.activeItem === 'Music') {
           self.setState({ activeItem: 'Games' });
         } else if (self.state.activeItem === 'Games') {
           self.setState({ activeItem: 'Settings' });
         } else {
-          self.setState({ activeItem: 'ControlFlow' });
+          self.setState({ activeItem: 'CoverFlow' });
         }
       } else {
         if (angle < -15) {
-          console.log('anticlockwise');
           angle = 0;
-          if (self.state.activeItem === 'ControlFlow') {
+          if (self.state.activeItem === 'CoverFlow') {
             self.setState({ activeItem: 'Settings' });
           } else if (self.state.activeItem === 'Settings') {
             self.setState({ activeItem: 'Games' });
           } else if (self.state.activeItem === 'Games') {
             self.setState({ activeItem: 'Music' });
           } else {
-            self.setState({ activeItem: 'ControlFlow' });
+            self.setState({ activeItem: 'CoverFlow' });
           }
         }
       }
     });
   };
+
+  changePage = () => {
+    this.setState({ page: this.state.activeItem });
+  };
+
+  homePage = () => {
+    this.setState({ page: 'Home' });
+  };
+
   render() {
-    const { activeItem } = this.state;
+    const { activeItem, page } = this.state;
     return (
       <div className='ipod-container'>
-        <Screen activeItem={activeItem} />
-        <Wheel rotateWheel={this.handleWheelControls} />
+        <div className='screen-container'>
+          <Screen activeItem={activeItem} page={page} />
+        </div>
+        <Wheel
+          rotateWheel={this.handleWheelControls}
+          changePage={this.changePage}
+          homePage={this.homePage}
+        />
       </div>
     );
   }

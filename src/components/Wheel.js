@@ -1,9 +1,11 @@
 function Wheel(props) {
-  const { rotateWheel } = props;
+  const { rotateWheel, changePage, homePage } = props;
   return (
     <div id='wheel' className='controls' onMouseOver={rotateWheel}>
-      <div className='menu'>MENU</div>
-      <div className='start'></div>
+      <div className='menu' onClick={homePage}>
+        MENU
+      </div>
+      <div className='start' onClick={changePage}></div>
       <div className='back'>
         <i className='fa-solid fa-backward-fast'></i>
       </div>

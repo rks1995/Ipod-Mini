@@ -1,68 +1,21 @@
+import Home from './pages/Home';
+import Music from './pages/Music';
+import Settings from './pages/Settings';
+import Games from './pages/Games';
+import CoverFlow from './pages/CoverFlow';
+
 function Screen(props) {
-  const { activeItem } = props;
-  return (
-    <div className='screen-container'>
-      <div className='menu-list'>
-        <h2>Ipod js</h2>
-        <ul>
-          {activeItem === 'ControlFlow' ? (
-            <li className='list-item select'>
-              <p>Cover Flow</p>
-              <i className='fa-solid fa-angle-right'></i>
-            </li>
-          ) : (
-            <li className='list-item'>
-              <p>Cover Flow</p>
-              <i className='fa-solid fa-angle-right'></i>
-            </li>
-          )}
-
-          {activeItem === 'Music' ? (
-            <li className='list-item select'>
-              <p>Music</p>
-              <i className='fa-solid fa-angle-right'></i>
-            </li>
-          ) : (
-            <li className='list-item'>
-              <p>Music</p>
-              <i className='fa-solid fa-angle-right'></i>
-            </li>
-          )}
-
-          {activeItem === 'Games' ? (
-            <li className='list-item select'>
-              <p>Games</p>
-              <i className='fa-solid fa-angle-right'></i>
-            </li>
-          ) : (
-            <li className='list-item'>
-              <p>Games</p>
-              <i className='fa-solid fa-angle-right'></i>
-            </li>
-          )}
-
-          {activeItem === 'Settings' ? (
-            <li className='list-item select'>
-              <p>Settings</p>
-              <i className='fa-solid fa-angle-right'></i>
-            </li>
-          ) : (
-            <li className='list-item'>
-              <p>Settings</p>
-              <i className='fa-solid fa-angle-right'></i>
-            </li>
-          )}
-        </ul>
-      </div>
-      <div className='walpaper'>
-        <img
-          className='wallpaper'
-          src='https://images.hdqwalls.com/download/mask-boy-listening-music-neon-4k-gm-1125x2436.jpg'
-          alt='wallpaper'
-        />
-      </div>
-    </div>
-  );
+  const { activeItem, page } = props;
+  if (page === 'Music') {
+    return <Music />;
+  } else if (page === 'Games') {
+    return <Games />;
+  } else if (page === 'Settings') {
+    return <Settings />;
+  } else if (page === 'CoverFlow') {
+    return <CoverFlow />;
+  }
+  return <Home activeItem={activeItem} />;
 }
 
 export default Screen;
