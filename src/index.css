@@ -34,7 +34,8 @@ code {
 
 .controls div {
   position: absolute;
-  
+  width: fit-content;
+  height: fit-content;
 }
 
 .menu, .back, .start, .forward, .play-pause{
@@ -44,28 +45,30 @@ code {
 }
 
 .menu {
-  top: 30px;
-  font-size: 0.95rem;
-  user-select: none;
+  top: 28px;
+font-size: 0.95rem;
+user-select: none;
+left: 70px;
 }
 
 .back {
-  left: -130px;
+  left: 18px;
 }
 
 .start {
   top: 0;
-  width: 60px;
-  height: 60px;
+  width: 60px !important;
+  height: 60px !important;
   margin: auto;
   border-radius: 50%;
   background-color: #555;
 }
 
 .forward {
-  right: -130px;
+  left: 150px;
 }
 
 .play-pause {
   top: 150px;
+  left: 85px;
 }
