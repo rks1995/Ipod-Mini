@@ -1,5 +1,9 @@
 function CoverFlow(props) {
-  return <h1>CoverFlow</h1>;
+  return (
+    <div className='page-container'>
+      <h1>Cover Flow</h1>
+    </div>
+  );
 }
 
 export default CoverFlow;
