@@ -30,24 +30,22 @@ class Wheel extends React.Component {
 
   render() {
     return (
-      <div className='wheel-container'>
-        <div
-          id='wheel'
-          className='controls'
-          onMouseOver={this.handleWheelControls}
-        >
-          <div className='menu'>MENU</div>
-          <div className='start'></div>
-          <div className='back'>
-            <i className='fa-solid fa-backward-fast'></i>
-          </div>
-          <div className='forward'>
-            <i className='fa-solid fa-forward-fast'></i>
-          </div>
-          <div className='play-pause'>
-            <i className='fa-solid fa-play'></i>
-            <i className='fa-solid fa-pause'></i>
-          </div>
+      <div
+        id='wheel'
+        className='controls'
+        onMouseOver={this.handleWheelControls}
+      >
+        <div className='menu'>MENU</div>
+        <div className='start'></div>
+        <div className='back'>
+          <i className='fa-solid fa-backward-fast'></i>
+        </div>
+        <div className='forward'>
+          <i className='fa-solid fa-forward-fast'></i>
+        </div>
+        <div className='play-pause'>
+          <i className='fa-solid fa-play'></i>
+          <i className='fa-solid fa-pause'></i>
         </div>
       </div>
     );

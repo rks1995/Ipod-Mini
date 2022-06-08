@@ -1,10 +1,9 @@
-import Wheel from './components/Wheel';
+import Ipod from './components/Ipod';
 
 function App() {
   return (
     <div className='App'>
-      <h1>Ipod</h1>
-      <Wheel />
+      <Ipod />
     </div>
   );
 }

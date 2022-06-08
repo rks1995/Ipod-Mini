@@ -1,5 +1,9 @@
-body {
+*, *::after , *::before {
   margin: 0;
+  padding: 0;
+}
+
+body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -12,20 +16,62 @@ code {
     monospace;
 }
 
-/* ========================== wheel component ======================== */
-
-.wheel-container {
-  width: 40%;
-  margin: 40px auto 0;
-  padding: 30px 0;
-  text-align: center;
-  background-color: #333;
+ul li {
+  list-style-type: none;
 }
 
-.controls {
+/* ========================== Ipod component ======================== */
+
+.ipod-container {
+  width: 300px;
+  height: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 40px;
+  align-items: center;
+  background-color: #DDDDDD;
+  box-shadow: 1px 1px 5px #c3c3c3;
+}
+
+/* ========================== Screen component ======================== */
+
+.screen-container {
+  width: 100%;
+  height: 280px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #666;
+  border-radius: 10px;
+}
+.menu-list {
+  flex: 2;
+  padding: 20px;
+  border-radius: 10px 0 0 10px;
+  background-color: #fff;
+  color: #444;
+}
+
+.menu-list .list-item {
+  margin: 30px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wallpaper {
+  width:100%;
+  height: 100%;
+  border-radius: 0 10px 10px 0;
+}
+
+/* ========================== wheel component ======================== */
+
+#wheel {
   width: 130px;
   height: 130px;
-  margin: auto;
   padding: 30px;
   position: relative;
   border-radius: 50%;
